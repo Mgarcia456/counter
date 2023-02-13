@@ -1,0 +1,31 @@
+<!--  COULD HAVE ADDED A DIV/CONTAINER AND CENTERED EVERYTHING BUT I GET THE CONECPT  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Counter</h1>
+    <!--    OPENING THE PORTAL FOR MY BUTTONS -->
+    <p>{{ session['count'] }}</p>
+    <a href="/">ADD 1</a>
+    <a href="/double_count">ADD BY 2</a>
+    <a href="/destroy_session">RESET</a>
+    <h3>Counter Form</h3>
+    <form action='custom_count' method='post'>
+        <label for='count'>
+            Enter the number of times to add to the count number
+        </label>
+        <input type="text" name='count'>
+        <input type="submit" value="Increment">
+    </form>
+</body>
+</html>
